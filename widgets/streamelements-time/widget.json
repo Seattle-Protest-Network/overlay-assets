@@ -1,0 +1,30 @@
+{
+  "fontName": {
+    "type": "googleFont",
+    "label": "Select a font:",
+    "value": "Roboto"
+  },
+  "fontColor": {
+    "type": "colorpicker",
+    "label": "Font Color",
+    "value": "#333"
+  },
+  "fontSize": {
+    "type": "number",
+    "label": "Font Size",
+    "value": 22,
+    "min": 6,
+    "max": 300,
+    "step": 1
+  },
+  "datetimeFormat": {
+    "type": "text",
+    "label": "Datetime Format",
+    "value": "HH:mm:ss zz"
+  },
+  "timezone": {
+    "type": "text",
+    "label": "Timezone",
+    "value": "America/Los_Angeles"
+  }
+}
