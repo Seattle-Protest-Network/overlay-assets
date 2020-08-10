@@ -1,0 +1,5 @@
+.marquee-message {
+  font-family: '{{fontName}}', sans-serif !important;
+  color: {{textColor}};
+  font-size: {{textSize}}px;
+}
