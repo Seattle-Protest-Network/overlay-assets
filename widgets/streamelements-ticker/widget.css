@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family={{fontName}}');
 .marquee-message {
   font-family: '{{fontName}}', sans-serif !important;
   color: {{textColor}};
