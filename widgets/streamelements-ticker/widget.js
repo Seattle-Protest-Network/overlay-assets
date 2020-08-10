@@ -20,21 +20,17 @@ function fetchText(url) {
 }
 
 function update(mq) {
-  console.log("Update!")
   scrollText = fetchText(url);
-  console.log(scrollText)
-  for(let i = mq.messages.length - 1; i >= 0; i--) {
-      mq.remove(mq.messages[i].id)
-  }
-  scrollText.split(/[\r\n]+/).forEach((textLine) => {
-    if(textLine.trim().length > 0) {
-      console.log("Adding line: ", textLine)
-      mq.add({
-        content: textLine,
-        class: 'marquee-message'
-      })
+  mq.pause()
+  const lines = scrollText.split(/[\r\n]+/g)
+  const newMessages = lines.map((line, idx) => {
+    return {
+      content: line,
+      class: 'marquee-message'
     }
   })
+  mq.messages = newMessages
+  mq.resume()
 }
 
 window.addEventListener('onWidgetLoad', function (obj) {
@@ -45,6 +41,8 @@ window.addEventListener('onWidgetLoad', function (obj) {
   const mq = Telex.widget("marquee", {
     speed: scrollSpeed,
     direction: 'normal',
-    onCycle: update
+    onCycle: (mq) => {
+      setTimeout(update, 1000, mq);
+    }
   }, [])
 });
