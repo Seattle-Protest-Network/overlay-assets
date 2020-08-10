@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family={{fontName}}');
+#output {
+  font-family: '{{fontName}}', monospace !important;
+  font-size: {{fontSize}}px;
+  color: {{fontColor}};
+}
